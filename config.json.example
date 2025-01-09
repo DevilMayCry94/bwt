@@ -1,0 +1,13 @@
+{
+  "rate_exchange_api": {
+    "base_url": "https://api.exchangeratesapi.io",
+    "api_key": ""
+  },
+  "bin_list": {
+    "base_url": "https://lookup.binlist.net"
+  },
+  "memcached": {
+    "host": "memcached",
+    "port": 11211
+  }
+}

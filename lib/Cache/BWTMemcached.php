@@ -2,6 +2,8 @@
 
 namespace BWT\Cache;
 
+use BWT\Core\Config;
+
 class BWTMemcached implements CacheInterface
 {
     private static BWTMemcached $instance;
@@ -10,7 +12,7 @@ class BWTMemcached implements CacheInterface
     protected function __construct()
     {
         $this->memcached = new \Memcached();
-        $this->memcached->addServer(appconfig('memcached.host'), (int) appconfig('memcached.port'));
+        $this->memcached->addServer(Config::get('memcached.host'), (int) Config::get('memcached.port'));
     }
 
     public static function getInstance(): self

@@ -2,6 +2,7 @@
 
 namespace BWT\Services\Clients;
 
+use BWT\Core\Config;
 use BWT\Services\Clients\Configs\ExchangeRateApiConfig;
 use GuzzleHttp\Client;
 
@@ -13,8 +14,8 @@ class ExchangeRateApiClient implements HttpClientInterface
     public function __construct()
     {
         $this->config = new ExchangeRateApiConfig(
-            appconfig('rate_exchange_api.base_url'),
-            appconfig('rate_exchange_api.api_key')
+            Config::get('rate_exchange_api.base_url'),
+            Config::get('rate_exchange_api.api_key')
         );
 
         $this->client = new Client([
